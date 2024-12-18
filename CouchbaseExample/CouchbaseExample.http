@@ -1,0 +1,6 @@
+@CouchbaseExample_HostAddress = http://localhost:5153
+
+GET {{CouchbaseExample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
