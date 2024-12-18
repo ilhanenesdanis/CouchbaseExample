@@ -17,8 +17,8 @@ namespace CouchbaseExample.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateNewCatalog(string catalogName)
         {
-            var collection = _couchbaseConfig.GetCollection();
-            await collection.UpsertAsync($"catalog::{Guid.NewGuid()}", catalogName);
+            //var collection = _couchbaseConfig.GetCollection();
+            //await collection.UpsertAsync($"catalog::{Guid.NewGuid()}", catalogName);
             return Ok("Catalog Created");
         }
     }

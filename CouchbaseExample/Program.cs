@@ -1,3 +1,5 @@
+using CouchbaseExample.Abstract;
+using CouchbaseExample.Concrete;
 using CouchbaseExample.Config;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<CouchbaseCredential>(builder.Configuration.GetSection("Couchbase"));
 builder.Services.AddSingleton<CouchbaseConfig>();
+
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 

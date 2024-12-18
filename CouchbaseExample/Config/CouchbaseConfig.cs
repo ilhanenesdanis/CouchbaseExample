@@ -23,10 +23,13 @@ namespace CouchbaseExample.Config
         {
             await _cluster.DisposeAsync();
         }
-        public ICouchbaseCollection GetCollection()
+        public ICouchbaseCollection GetCollection(string scopeName, string collenctionName)
         {
-            return _bucket.DefaultCollection();
+            var scope = _bucket.ScopeAsync(scopeName).Result;
+            return scope.CollectionAsync(collenctionName).Result;
+
+
         }
-        
+
     }
 }
